@@ -49,7 +49,7 @@ export default function Header() {
       </button>
 
       {isMenuOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-60 z-40">
+        <div className="fixed top-0 left-0 w-full h-full bg-app-blue-900 bg-opacity-60 z-40">
           <div className="fixed top-0 left-0 w-3/4 sm:w-2/4 md:w-1/3 h-full bg-white shadow-lg z-50">
             <div className="flex flex-col p-6">
               <button
@@ -64,7 +64,7 @@ export default function Header() {
                     <li key={text}>
                       <Link
                         to={href}
-                        className="hover:text-blue-500 transition-colors"
+                        className="text-app-blue-900 transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {text}
