@@ -17,6 +17,10 @@ export default {
     ],
   },
   theme: {
+    backgroundImage: {
+      "hero-banner": "linear-gradient(#000000af, #000000af), url('./img/hero-banner.png')",
+      "download-banner": "linear-gradient(#252B420f, #252B420f), url('./img/download-banner.png')"
+    },
     extend: {
       colors: {
         app: {
@@ -27,6 +31,7 @@ export default {
             900: "#252B42"
           },
           grey: {
+            500:"#E4E4E4",
             900: "#737373"
           }
         }

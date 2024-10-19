@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Logo } from "../atoms";
+
 interface NavItem {
   text: string;
   href: string;
@@ -9,38 +11,43 @@ interface NavItem {
 const NavItem: NavItem[] = [
   {
     text: "Home",
-    href: "/"
+    href: "/",
   },
   {
     text: "Product",
-    href: "/a"
+    href: "/a",
   },
   {
     text: "Faq",
-    href: "/d"
+    href: "/d",
   },
   {
     text: "Contact",
-    href: "/e"
-  }
+    href: "/e",
+  },
 ];
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false);
   return (
     <header className="w-full flex  bg-red justify-between items-center py-2 px-6">
-      <img src="/logo.png" alt="app logo" className="h-[55px]" />
+      <Logo />
+
       <nav className="hidden md:flex items-center justify-center w-fit gap-20">
-        {
-          NavItem.map(({ text, href }) => (
-            <Link key={text} to={href}>
-              <span className="text-app-blue-900 font-semibold text-base cursor-pointer hover:text-app-orange-900">{text}</span>
-            </Link>
-          ))
-        }
+        {NavItem.map(({ text, href }) => (
+          <Link key={text} to={href}>
+            <span className="text-app-blue-900 font-semibold text-base cursor-pointer hover:text-app-orange-900">
+              {text}
+            </span>
+          </Link>
+        ))}
       </nav>
 
-      <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation" className="md:hidden text-app-grey-900">
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle navigation"
+        className="md:hidden text-app-grey-900"
+      >
         {isMenuOpen ? (
           <FaTimes className="h-[55px] w-[25px]" />
         ) : (
@@ -78,5 +85,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }
