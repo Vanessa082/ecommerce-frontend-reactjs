@@ -11,7 +11,7 @@ export function Logo({ className, ...restProps }: LogoProps) {
       {...restProps}
       src="/logo.png"
       alt="app logo"
-      className={cn("h-[55px]", className)}
+      className={cn("h-[30px] md:h-[40px]", className)}
     />
   );
 }
